@@ -2,7 +2,7 @@
 Check if Apple devices are in stock and send a notification
 1. You need to check the config.py file and fill the required information in that file
 2. You have 2 ways for receive the notification Telegram and/or Twilio
-3.1 Telegram using telegram_send:
+3. Telegram using telegram_send:
 ```
 Step 1: Speak with “the BotFather”:
 Click this link and it will open your telegram client* and start a chat with the BotFather.
