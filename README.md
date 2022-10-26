@@ -10,7 +10,7 @@ Send the message “/newbot” (no quotes) and follow the instructions.
 *you’ll need to sign up for an account if you don’t already have one
 
 Step 2: Install telegram-send and link it to your bot:
-To install, open a terminal and run pip install telegram-send followed by telegram-send configure
+To install, open a terminal and run pip install telegram-send followed by telegram-send --configure
 telegram-send will ask for the token you got from the botfather, and then give you a password that you need to message to your new bot on Telegram.
 Send the token you got from the botfather and telegram-send will reply with a 5-digit password you need to send to your new bot.
 Forwarding the password to my new bot
