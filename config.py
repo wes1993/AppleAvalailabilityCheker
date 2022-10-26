@@ -23,3 +23,5 @@ smsdelay = 15
 
 #Telegram Settings
 use_telegram = True
+#Insert Delay between Telegram
+teldelay = 1
