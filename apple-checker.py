@@ -9,6 +9,7 @@ import datetime
 p = len(PART)
 n = len(number)
 delay = datetime.datetime.now()
+delaytel = datetime.datetime.now()
 
 try:
 
@@ -20,6 +21,7 @@ try:
       iphnoava = "Attualmente Nessun:"
       global delay
       global store
+      global delaytel
       for c in range (p):
         url = "https://www.apple.com/it/shop/fulfillment-messages?pl=true&parts.0=" + PART[c] + "&location=" + ZIP
         #Do The Request to Apple Servers
@@ -60,9 +62,14 @@ try:
       if ava == True:
         print (sa)
         print (" ") 
+############ Telegram #################
         if use_telegram == True:
-          telegram_send.send(messages=[sa])
-          print ("Invio Notifica Telegram")
+          now = datetime.datetime.now()
+          if datetime.datetime.now() > delaytel:
+            delaytel = now + datetime.timedelta(minutes=teldelay) # days, seconds, then other fields.
+            telegram_send.send(messages=[sa])
+            print ("Invio Notifica Telegram")
+########### Twilio ###################
         if use_twilio == True:
           now = datetime.datetime.now()
           if datetime.datetime.now() > delay:
