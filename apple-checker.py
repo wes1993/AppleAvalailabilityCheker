@@ -26,9 +26,20 @@ try:
         url = "https://www.apple.com/it/shop/fulfillment-messages?pl=true&parts.0=" + PART[c] + "&location=" + ZIP
         #Do The Request to Apple Servers
         r = requests.get(url)
+        print(r.status_code)
+
+        while r.status_code != 200:
+            print("Bad Response, Try Again")
+            r = requests.get(url)
+            print(r.status_code)
+            time.sleep(59)
+        else:
+          print("Response 200 -- OK")
         # Get Number of near store
         try:
+            #print(r.json())
             sn = len(r.json()['body']['content']['pickupMessage']['stores'])
+            print(sn)
             if sn < store:
               store = sn
             print ("######################################")
